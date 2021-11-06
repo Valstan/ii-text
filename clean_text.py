@@ -1,5 +1,10 @@
 import re
 
+import pymorphy2
+from pytz import unicode
+
+ma = pymorphy2.MorphAnalyzer()
+
 
 def clean_text(text):
     text = text.replace("\\", " ").replace(u"╚", " ").replace(u"╩", " ")
@@ -8,6 +13,7 @@ def clean_text(text):
     text = re.sub('[.,:;_%©?*,!@#$%^&()\d]|[+=]|[[]|[]]|[/]|"|\s{2,}|-', ' ', text)  # deleting symbols
     text = " ".join(ma.parse(unicode(word))[0].normal_form for word in text.split())
     text = ' '.join(word for word in text.split() if len(word) > 3)
-    text = text.encode("utf-8")
+    text = list(set(text.split()))
+    # text = text.encode("utf-8")
 
     return text
