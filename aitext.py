@@ -3,7 +3,7 @@ from get_posts import get_posts
 
 from tokenizer_words import tokenizer_words
 
-posts = get_posts(30)
+posts = get_posts(20)
 
 text = []
 for i in posts:
