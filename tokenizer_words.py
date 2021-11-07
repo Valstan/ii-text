@@ -5,8 +5,6 @@ from keras.preprocessing.text import Tokenizer
 
 def tokenizer_words(txt_list):
 
-    tokenizer = Tokenizer()
-
     with open('tokenizer.pickle', 'rb') as handle:
         tokenizer = pickle.load(handle)
 

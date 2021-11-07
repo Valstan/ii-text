@@ -24,9 +24,11 @@ def get_posts(count):
     session.update(lp)
     vkapp = get_session_vk_api(change_lp(session))
     count = count // len(session['groups'])
-    posts = read_posts(vkapp, session['groups'], 5)
+    posts = read_posts(vkapp, session['groups'], count)
     new_posts = []
     for i in posts:
-        new_posts.append(clear_copy_history(i))
+        a = clear_copy_history(i)
+        if a['text']:
+            new_posts.append(a)
 
     return new_posts
