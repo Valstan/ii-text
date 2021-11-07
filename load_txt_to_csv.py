@@ -13,14 +13,16 @@ session = {
         "Первый Малмыжский https://vk.com/malmiz": -86517261
     }}
 
-posts = get_posts(50)
+posts = get_posts(100)
 train = pd.read_csv('train.csv')
 list_train_old = train['text'].to_list()
+new_texts = []
 
 for i in posts:
-    if i['text'] not in list_train_old:
+    if i['text'] not in list_train_old and i['text'] not in new_texts:
         print(i['text'])
         a = int(input("0 or 1 - "))
         train.loc[len(train.index)] = [a, i['text']]
+        new_texts.append(i['text'])
 
 train.to_csv('train.csv', encoding='utf-8', index=False)
