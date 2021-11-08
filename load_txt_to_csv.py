@@ -2,19 +2,10 @@ import pandas as pd
 
 from get_posts import get_posts
 
-session = {
-    "name_base": "mi",
-    "name_session": "novost",
-    "groups": {
-        "Подслушано Малмыж https://vk.com/podslyshanomalmyj": -149841761,
-        "Обо всем Малмыж https://vk.com/malpod": -89083141,
-        "Иван Малмыж https://vk.com/malmyzh.prodam": 364752344,
-        "Почитай Малмыж https://vk.com/baraholkaml": 624118736,
-        "Первый Малмыжский https://vk.com/malmiz": -86517261
-    }}
+posts = get_posts(50)
 
-posts = get_posts(100)
-train = pd.read_csv('train.csv')
+train = pd.read_csv('avoska_txt.csv', header=None, names=['category', 'text'])
+len_old_train = len(train.index)
 list_train_old = train['text'].to_list()
 new_texts = []
 
@@ -25,4 +16,7 @@ for i in posts:
         train.loc[len(train.index)] = [a, i['text']]
         new_texts.append(i['text'])
 
-train.to_csv('train.csv', encoding='utf-8', index=False)
+print("Было - ", len_old_train, " записей.")
+print("Стало - ", len(train.index), " записей.")
+
+train.to_csv('avoska_txt.csv', header=False, encoding='utf-8', index=False)
