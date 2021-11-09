@@ -37,12 +37,19 @@ model.compile(optimizer='adam',
 
 model.summary()
 
+model_save_path = "best_model.h5"
+checkpoint_callback = ModelCheckpoint(model_save_path,
+                                      monitor='val_accuracy',
+                                      save_best_only=True,
+                                      verbose=1)
+
 print("Обучаем модель")
 history = model.fit(x_train,
                     y_train,
                     epochs=4,
                     batch_size=128,
-                    validation_split=0.1)
+                    validation_split=0.1,
+                    callbacks=[checkpoint_callback])
 
 plt.plot(history.history['accuracy'],
          label='Доля верных ответов на обучающем наборе')
@@ -53,7 +60,7 @@ plt.ylabel('Доля верных ответов')
 plt.legend()
 plt.show()
 
-model.save('my_model.h5')  # creates a HDF5 file 'my_model.h5'
+# model.save('my_model.h5')  # creates a HDF5 file 'my_model.h5'
 # del model  # deletes the existing model
 
 # returns a compiled model

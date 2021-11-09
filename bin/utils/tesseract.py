@@ -11,4 +11,4 @@ def tesseract(patch):
     try:
         return pytesseract.image_to_string(img, lang='rus', config=custom_config)
     except:
-        return 'пусто'
+        return ''
