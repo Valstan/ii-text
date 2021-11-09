@@ -4,7 +4,7 @@ from bin.rw.get_image import image_get
 from bin.utils.tesseract import tesseract
 from get_posts_with_image import get_posts_with_image
 
-posts = get_posts_with_image(200, 100)
+posts = get_posts_with_image(0, 100)
 
 texts = []
 count_pictures = 0

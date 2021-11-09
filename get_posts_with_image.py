@@ -31,7 +31,7 @@ def get_posts_with_image(offset, count):
         "name_base": "mi",
         "name_session": "novost",
         "groups": {
-            "Подслушано Малмыж https://vk.com/podslyshanomalmyj": -149841761
+            "Обо всем Малмыж https://vk.com/malpod": -89083141
         }}
     with open(os.path.join('logpass.json'), 'r', encoding='utf-8') as f:
         lp = json.load(f)
