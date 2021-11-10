@@ -1,5 +1,5 @@
 from clean_text import clean_text
-from get_posts import get_posts
+from bin.load_txt_to_csv.get_posts import get_posts
 
 from tokenizer_words import tokenizer_words
 

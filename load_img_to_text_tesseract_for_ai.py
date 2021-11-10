@@ -1,10 +1,12 @@
+import easyocr
 import pandas as pd
 
 from bin.rw.get_image import image_get
-from bin.utils.tesseract import tesseract
 from get_posts_with_image import get_posts_with_image
 
-posts = get_posts_with_image(0, 100)
+reader = easyocr.Reader(["ru", "en"])
+
+posts = get_posts_with_image(0, 50)
 
 texts = []
 count_pictures = 0
@@ -17,14 +19,14 @@ for i in posts:
             height = x['height']
             url = x['url']
     if image_get(url, 'image'):
-        a = tesseract('image')
+        result = list(reader.readtext('image', detail=0, paragraph=False))
         count_pictures += 1
-        if count_pictures % 10:
+        if count_pictures % 20:
             print('*', end='')
         else:
-            print('\nКартинок распознано - ', count_pictures)
-        if a:
-            texts.append(a)
+            print('Распознано - ', count_pictures)
+        if result:
+            texts.append(' '.join(str(e) for e in result))
 print('\nИтого картинок распознано - ', count_pictures)
 train = pd.read_csv('avoska_tesseract_txt.csv', header=None, names=['category', 'text'])
 len_old_train = len(train.index)
