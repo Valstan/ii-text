@@ -18,7 +18,7 @@ def main(count, group, path_file):
     offset = 0
     posts = []
     while offset <= count-100:
-        posts.append(read_posts(vk_app, session['groups'], 100, offset))
+        posts.extend(read_posts(vk_app, session['groups'], 100, offset))
         offset += 100
 
     new_posts = []
