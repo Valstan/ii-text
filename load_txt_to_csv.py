@@ -44,7 +44,7 @@ def main(count, offset, group, path_file):
 
 
 if __name__ == '__main__':
-    one = 100  # сколько постов скачать
+    one = 50  # сколько постов скачать
     two = 0  # смещение от начала ленты
     three = {"Подслушано Малмыж https://vk.com/podslyshanomalmyj": -149841761,
              "Обо всем Малмыж https://vk.com/malpod": -89083141,
@@ -52,5 +52,5 @@ if __name__ == '__main__':
              "Почитай Малмыж https://vk.com/baraholkaml": 624118736,
              "Первый Малмыжский https://vk.com/malmiz": -86517261
              }
-    four = 'avoska_txt.csv'
+    four = 'avoska.csv'
     main(one, two, three, four)

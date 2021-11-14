@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 num_words = 10000
 max_review_len = 100
-train = pd.read_csv('avoska_txt.csv', header=None, names=['Class', 'Review'])
+train = pd.read_csv('avoska.csv', header=None, names=['Class', 'Review'])
 reviews = train['Review']
 y_train = train['Class']
 tokenizer = Tokenizer(num_words=num_words)
@@ -46,7 +46,7 @@ checkpoint_callback = ModelCheckpoint(model_save_path,
 print("Обучаем модель")
 history = model.fit(x_train,
                     y_train,
-                    epochs=4,
+                    epochs=10,
                     batch_size=128,
                     validation_split=0.1,
                     callbacks=[checkpoint_callback])
@@ -67,5 +67,3 @@ plt.show()
 # identical to the previous one
 # model = load_model('my_model.h5')
 
-print("pause")
-print("stop")
