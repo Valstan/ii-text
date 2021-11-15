@@ -1,4 +1,5 @@
 import pandas as pd
+from sklearn.utils import shuffle
 
 from bin.load_txt_to_csv.get_txt_from_posts import get_txt_from_posts
 from bin.rw.change_lp import change_lp
@@ -7,6 +8,7 @@ from bin.rw.get_session_vk_api import get_session_vk_api
 from bin.rw.read_posts import read_posts
 from bin.utils.clear_copy_history import clear_copy_history
 from bin.utils.driver import load_table
+from clean_text import clean_text
 
 
 def main(count, offset, group, path_file):
@@ -19,7 +21,12 @@ def main(count, offset, group, path_file):
     for i in posts:
         new_posts.append(clear_copy_history(i))
     texts = get_txt_from_posts(new_posts)
-    summa = len(texts)
+
+    list_train_new = []
+    for i in texts:
+        list_train_new.append(clean_text(i))
+
+    summa = len(list_train_new)
 
     train = pd.read_csv(path_file, header=None, names=['category', 'text'])
     len_old_train = len(train.index)
@@ -27,7 +34,7 @@ def main(count, offset, group, path_file):
 
     count = 0
     new_texts = []
-    for i in texts:
+    for i in list_train_new:
         count += 1
         if i not in list_train_old and i not in new_texts:
             print(i)
@@ -39,6 +46,9 @@ def main(count, offset, group, path_file):
 
     print("Было - ", len_old_train, " записей.")
     print("Стало - ", len(train.index), " записей.")
+
+    train = train.drop_duplicates('text', keep='last')
+    train = shuffle(train)
 
     train.to_csv(path_file, header=False, encoding='utf-8', index=False)
 

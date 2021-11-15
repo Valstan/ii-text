@@ -1,5 +1,12 @@
+import re
+
+import pymorphy2
+from pytz import unicode
+
 from bin.rw.get_image import image_get
 from bin.utils.free_ocr import free_ocr
+
+ma = pymorphy2.MorphAnalyzer()
 
 
 def get_txt_from_posts(posts):
@@ -21,4 +28,5 @@ def get_txt_from_posts(posts):
                 print('Картинок распознано - ', count_pictures)
                 if a:
                     texts.append(a)
+
     return texts

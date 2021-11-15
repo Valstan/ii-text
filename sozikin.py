@@ -29,6 +29,8 @@ model.add(Conv1D(250, 5, padding='valid', activation='relu'))
 model.add(GlobalMaxPooling1D())
 model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.2))
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.2))
 model.add(Dense(1, activation='sigmoid'))
 
 model.compile(optimizer='adam',
