@@ -96,7 +96,7 @@ model.compile(optimizer='adam',
               loss='binary_crossentropy', 
               metrics=['accuracy'])
 
-model_save_path = "best_model.h5"
+model_save_path = "models_ai/best_model.h5"
 checkpoint_callback = ModelCheckpoint(model_save_path,
                                       monitor='val_accuracy',
                                       save_best_only=True,

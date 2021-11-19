@@ -1,12 +1,5 @@
-import re
-
-import pymorphy2
-from pytz import unicode
-
 from bin.rw.get_image import image_get
 from bin.utils.free_ocr import free_ocr
-
-ma = pymorphy2.MorphAnalyzer()
 
 
 def get_txt_from_posts(posts):
@@ -16,9 +9,9 @@ def get_txt_from_posts(posts):
         if 'text' in i and i['text']:
             texts.append(i['text'])
         if 'attachments' in i and i['attachments'][0]['type'] == 'photo':
+            height = 0
+            url = ''
             for x in i['attachments'][0]['photo']['sizes']:
-                height = 0
-                url = ''
                 if x['height'] > height:
                     height = x['height']
                     url = x['url']

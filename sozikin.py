@@ -1,18 +1,13 @@
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Embedding, MaxPooling1D, Conv1D, GlobalMaxPooling1D, Dropout
-from tensorflow.keras import utils
+import pandas as pd
+from kerastuner.tuners import RandomSearch
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.callbacks import ModelCheckpoint
-from keras.models import load_model
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 
+from bin.utils.build_model import build_model
 
 num_words = 10000
-max_review_len = 100
-train = pd.read_csv('avoska.csv', header=None, names=['Class', 'Review'])
+max_review_len = 50
+train = pd.read_csv('data/avoska_ai.csv', header=None, names=['Class', 'Review'])
 reviews = train['Review']
 y_train = train['Class']
 tokenizer = Tokenizer(num_words=num_words)
@@ -23,44 +18,32 @@ sequences = tokenizer.texts_to_sequences(reviews)
 print("Токинайзеры завершены")
 x_train = pad_sequences(sequences, maxlen=max_review_len)
 
-model = Sequential()
-model.add(Embedding(num_words, 64, input_length=max_review_len))
-model.add(Conv1D(250, 5, padding='valid', activation='relu'))
-model.add(GlobalMaxPooling1D())
-model.add(Dense(128, activation='relu'))
-model.add(Dropout(0.2))
-model.add(Dense(128, activation='relu'))
-model.add(Dropout(0.2))
-model.add(Dense(1, activation='sigmoid'))
+tuner = RandomSearch(
+    build_model,  # функция создания модели
+    objective='val_accuracy',  # метрика, которую нужно оптимизировать -
+    # доля правильных ответов на проверочном наборе данных
+    max_trials=80,  # максимальное количество запусков обучения
+    directory='test_directory'  # каталог, куда сохраняются обученные сети
+)
 
-model.compile(optimizer='adam',
-              loss='binary_crossentropy',
-              metrics=['accuracy'])
+# tuner.search_space_summary()
 
-model.summary()
+tuner.search(x_train,  # Данные для обучения
+             y_train,  # Правильные ответы
+             batch_size=256,  # Размер мини-выборки
+             epochs=20,  # Количество эпох обучения
+             validation_split=0.1,  # Часть данных, которая будет использоваться для проверки
+             )
 
-model_save_path = "best_model.h5"
-checkpoint_callback = ModelCheckpoint(model_save_path,
-                                      monitor='val_accuracy',
-                                      save_best_only=True,
-                                      verbose=1)
+tuner.results_summary()
 
-print("Обучаем модель")
-history = model.fit(x_train,
-                    y_train,
-                    epochs=10,
-                    batch_size=128,
-                    validation_split=0.1,
-                    callbacks=[checkpoint_callback])
-
-plt.plot(history.history['accuracy'],
-         label='Доля верных ответов на обучающем наборе')
-plt.plot(history.history['val_accuracy'],
-         label='Доля верных ответов на проверочном наборе')
-plt.xlabel('Эпоха обучения')
-plt.ylabel('Доля верных ответов')
-plt.legend()
-plt.show()
+models = tuner.get_best_models(num_models=3)
+model_save_path = ("best_model1.h5", "best_model2.h5", "best_model3.h5")
+for idx, model in enumerate(models):
+    model.summary()
+    model.evaluate(x_train, y_train)
+    model.save(model_save_path[idx])
+    print()
 
 # model.save('my_model.h5')  # creates a HDF5 file 'my_model.h5'
 # del model  # deletes the existing model
@@ -68,4 +51,3 @@ plt.show()
 # returns a compiled model
 # identical to the previous one
 # model = load_model('my_model.h5')
-
