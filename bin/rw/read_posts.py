@@ -9,7 +9,7 @@ def read_posts(vkapp, group_list, count, offset=0):
         try:
             posts += get_msg(vkapp, group, offset, count)
         except:
-            pass
+            print('Не получил посты - ', group)
         time.sleep(1)
     return posts
 

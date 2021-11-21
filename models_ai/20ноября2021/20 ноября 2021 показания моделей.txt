@@ -1,0 +1,216 @@
+20 ноября 2021
+200 попыток керас-тюнера
+по 20 эпох
+bath выборка - 128
+BayesianOptimization
+
+from tensorflow.keras.layers import Dense, Embedding, Conv1D, GlobalMaxPooling1D, Dropout
+from tensorflow.keras.models import Sequential
+
+
+def build_model(hp):
+    model = Sequential()
+    activation_choice = hp.Choice('activation', values=['relu', 'sigmoid', 'tanh', 'elu', 'selu'])
+    model.add(Embedding(10000, 50, input_length=50))
+    model.add(Conv1D(250, 5, padding='valid', activation=activation_choice))
+    model.add(GlobalMaxPooling1D())
+    model.add(Dense(units=hp.Int('units_input',  # Полносвязный слой с разным количеством нейронов
+                                 min_value=512,  # минимальное количество нейронов
+                                 max_value=1024,  # максимальное количество
+                                 step=32),
+                    activation=activation_choice))
+    model.add(Dropout(0.3))
+    model.add(Dense(units=hp.Int('units_hidden',
+                                 min_value=128,
+                                 max_value=600,
+                                 step=32),
+                    activation=activation_choice))
+    model.add(Dropout(0.2))
+    model.add(Dense(units=hp.Int('units_hidden2',
+                                 min_value=64,
+                                 max_value=320,
+                                 step=32),
+                    activation=activation_choice))
+    model.add(Dense(2, activation='sigmoid'))
+    model.compile(
+        optimizer=hp.Choice('optimizer', values=['adam', 'rmsprop', 'SGD']),
+        loss='binary_crossentropy',
+        metrics=['accuracy'])
+    return model
+
+
+Best val_accuracy So Far: 0.9658966064453125
+Total elapsed time: 02h 22m 15s
+Results summary
+Results in test_directory\untitled_project
+Showing 10 best trials
+Objective(name='val_accuracy', direction='max')
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 512
+units_hidden: 576
+units_hidden2: 320
+optimizer: adam
+Score: 0.9658966064453125
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 672
+units_hidden: 576
+units_hidden2: 64
+optimizer: adam
+Score: 0.9636963605880737
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 768
+units_hidden: 480
+units_hidden2: 64
+optimizer: adam
+Score: 0.9625962376594543
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 768
+units_hidden: 448
+units_hidden2: 64
+optimizer: adam
+Score: 0.9614961743354797
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 768
+units_hidden: 480
+units_hidden2: 64
+optimizer: adam
+Score: 0.9614961743354797
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 768
+units_hidden: 480
+units_hidden2: 64
+optimizer: adam
+Score: 0.9614961743354797
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 800
+units_hidden: 576
+units_hidden2: 64
+optimizer: adam
+Score: 0.9603960514068604
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 1024
+units_hidden: 384
+units_hidden2: 224
+optimizer: adam
+Score: 0.9603960514068604
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 640
+units_hidden: 576
+units_hidden2: 64
+optimizer: adam
+Score: 0.9603960514068604
+Trial summary
+Hyperparameters:
+activation: relu
+units_input: 608
+units_hidden: 576
+units_hidden2: 64
+optimizer: adam
+Score: 0.9603960514068604
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 50)            500000
+
+ conv1d (Conv1D)             (None, 46, 250)           62750
+
+ global_max_pooling1d (Globa  (None, 250)              0
+ lMaxPooling1D)
+
+ dense (Dense)               (None, 512)               128512
+
+ dropout (Dropout)           (None, 512)               0
+
+ dense_1 (Dense)             (None, 576)               295488
+
+ dropout_1 (Dropout)         (None, 576)               0
+
+ dense_2 (Dense)             (None, 320)               184640
+
+ dense_3 (Dense)             (None, 2)                 642
+
+=================================================================
+Total params: 1,172,032
+Trainable params: 1,172,032
+Non-trainable params: 0
+_________________________________________________________________
+284/284 [==============================] - 1s 4ms/step - loss: 0.0532 - accuracy: 0.9839
+
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 50)            500000
+
+ conv1d (Conv1D)             (None, 46, 250)           62750
+
+ global_max_pooling1d (Globa  (None, 250)              0
+ lMaxPooling1D)
+
+ dense (Dense)               (None, 672)               168672
+
+ dropout (Dropout)           (None, 672)               0
+
+ dense_1 (Dense)             (None, 576)               387648
+
+ dropout_1 (Dropout)         (None, 576)               0
+
+ dense_2 (Dense)             (None, 64)                36928
+
+ dense_3 (Dense)             (None, 2)                 130
+
+=================================================================
+Total params: 1,156,128
+Trainable params: 1,156,128
+Non-trainable params: 0
+_________________________________________________________________
+284/284 [==============================] - 1s 3ms/step - loss: 0.0558 - accuracy: 0.9822
+
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 50)            500000
+
+ conv1d (Conv1D)             (None, 46, 250)           62750
+
+ global_max_pooling1d (Globa  (None, 250)              0
+ lMaxPooling1D)
+
+ dense (Dense)               (None, 768)               192768
+
+ dropout (Dropout)           (None, 768)               0
+
+ dense_1 (Dense)             (None, 480)               369120
+
+ dropout_1 (Dropout)         (None, 480)               0
+
+ dense_2 (Dense)             (None, 64)                30784
+
+ dense_3 (Dense)             (None, 2)                 130
+
+=================================================================
+Total params: 1,155,552
+Trainable params: 1,155,552
+Non-trainable params: 0
+_________________________________________________________________
+284/284 [==============================] - 1s 3ms/step - loss: 0.0628 - accuracy: 0.9814
