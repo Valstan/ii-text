@@ -4,10 +4,11 @@ import pandas as pd
 import pymorphy2
 from pytz import unicode
 
+ma = pymorphy2.MorphAnalyzer()
+
 
 def human_to_ai():
     print('Начинаем обработку текста для нейронки и перенос в авоську')
-    ma = pymorphy2.MorphAnalyzer()
 
     train_human = pd.read_csv('data/new_human.csv', header=None, names=['category', 'text'])
     old_count_human = len(train_human.index)
@@ -22,23 +23,24 @@ def human_to_ai():
     for idx, val in enumerate(list_text_human):
         if idx % 100 == 0:
             print(idx)
-        d = str(val)
-        d = re.sub("[^\w]", " ", d)
-        d = re.sub("_", " ", d)
-        d = d.lower()
-        d = " ".join(ma.parse(unicode(word))[0].normal_form for word in d.split())
-        d = re.sub(" анон", " ", d)
-        d = re.sub("анон ", " ", d)
-        d = re.sub("анонимно", " ", d)
-        d = re.sub("аноним", " ", d)
-        d = ' '.join(word for word in d.split() if len(word) > 3)
-        d = list(set(d.split()))
-        d = ' '.join(str(e) for e in d)
-        if not d or d == '' or d == ' ' or d == '  ' or d in 'ананимноанонимно':
-            continue
-        if d not in list_text_new and d not in list_text_ai:
-            train_ai.loc[len(train_ai.index)] = [list_category[idx], d]
-            list_text_new += d
+        text = str(val)
+        text = text.lower()
+        text = re.sub(r"(\b|не|не )ан[оа]н\w*|"
+                      r"п[оа]жалу?й?ст[ао]|"
+                      r"админ[уы]? пр[ао]пустит?е?|"
+                      r"админ[уы]?\b|"
+                      r"Здрав?с?т?в?у?й?т?е?",
+                      '', text)
+
+        text = " ".join(ma.parse(unicode(word))[0].normal_form for word in text.split())
+
+        text = ' '.join(word for word in text.split() if len(word) > 3)
+        text = list(set(text.split()))
+        text = ' '.join(str(e) for e in text)
+
+        if text and text not in list_text_new and text not in list_text_ai:
+            train_ai.loc[len(train_ai.index)] = [list_category[idx], text]
+            list_text_new += text
 
     train = train_ai.drop_duplicates('text', keep='last')
     new_count = len(train.index)

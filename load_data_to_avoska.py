@@ -26,7 +26,7 @@ groups["Смешное видео"] = -132265
 count_posts = 100  # сколько постов скачать
 offset = 0  # смещение от начала ленты
 
-session = get_session('mi', 'config', 'test')
+session = get_session('mi', 'config', 'novost')
 session = load_table(session, session['name_session'])
 session['groups'] = groups
 vk_app = get_session_vk_api(change_lp(session))
