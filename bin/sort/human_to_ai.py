@@ -29,13 +29,14 @@ def human_to_ai():
                       r"п[оа]жалу?й?ст[ао]|"
                       r"админ[уы]? пр[ао]пустит?е?|"
                       r"админ[уы]?\b|"
-                      r"Здрав?с?т?в?у?й?т?е?",
-                      '', text)
+                      r"Здрав?с?т?в?у?й?т?е?|"
+                      r"[^a-zA-Z0-9а-яА-Я]+",
+                      ' ', text)
 
         text = " ".join(ma.parse(unicode(word))[0].normal_form for word in text.split())
 
         text = ' '.join(word for word in text.split() if len(word) > 3)
-        text = list(set(text.split()))
+        text = list(set(sorted(text.split())))
         text = ' '.join(str(e) for e in text)
 
         if text and text not in list_text_new and text not in list_text_ai:
