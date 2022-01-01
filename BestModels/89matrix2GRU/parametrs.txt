@@ -1,0 +1,597 @@
+Trial 30 Complete [00h 05m 13s]
+val_categorical_accuracy: 0.8858746290206909
+
+Best val_categorical_accuracy So Far: 0.895229160785675
+Total elapsed time: 03h 25m 22s
+Epoch 1/50
+134/134 [==============================] - 21s 49ms/step - loss: 0.1627 - categorical_accuracy: 0.8048 - val_loss: 0.1590 - val_categorical_accuracy: 0.8213
+Epoch 2/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1525 - categorical_accuracy: 0.8320 - val_loss: 0.1504 - val_categorical_accuracy: 0.8213
+Epoch 3/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1465 - categorical_accuracy: 0.8303 - val_loss: 0.1477 - val_categorical_accuracy: 0.8213
+Epoch 4/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1426 - categorical_accuracy: 0.8327 - val_loss: 0.1451 - val_categorical_accuracy: 0.8260
+Epoch 5/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1393 - categorical_accuracy: 0.8355 - val_loss: 0.1416 - val_categorical_accuracy: 0.8297
+Epoch 6/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1387 - categorical_accuracy: 0.8355 - val_loss: 0.1397 - val_categorical_accuracy: 0.8297
+Epoch 7/50
+134/134 [==============================] - 6s 47ms/step - loss: 0.1367 - categorical_accuracy: 0.8348 - val_loss: 0.1377 - val_categorical_accuracy: 0.8307
+Epoch 8/50
+134/134 [==============================] - 6s 47ms/step - loss: 0.1324 - categorical_accuracy: 0.8390 - val_loss: 0.1361 - val_categorical_accuracy: 0.8316
+Epoch 9/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1340 - categorical_accuracy: 0.8376 - val_loss: 0.1347 - val_categorical_accuracy: 0.8344
+Epoch 10/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1297 - categorical_accuracy: 0.8399 - val_loss: 0.1336 - val_categorical_accuracy: 0.8335
+Epoch 11/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.1280 - categorical_accuracy: 0.8369 - val_loss: 0.1324 - val_categorical_accuracy: 0.8344
+Epoch 12/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1243 - categorical_accuracy: 0.8439 - val_loss: 0.1303 - val_categorical_accuracy: 0.8363
+Epoch 13/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.1252 - categorical_accuracy: 0.8397 - val_loss: 0.1296 - val_categorical_accuracy: 0.8382
+Epoch 14/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1222 - categorical_accuracy: 0.8462 - val_loss: 0.1279 - val_categorical_accuracy: 0.8354
+Epoch 15/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.1184 - categorical_accuracy: 0.8476 - val_loss: 0.1270 - val_categorical_accuracy: 0.8344
+Epoch 16/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1170 - categorical_accuracy: 0.8514 - val_loss: 0.1248 - val_categorical_accuracy: 0.8372
+Epoch 17/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1155 - categorical_accuracy: 0.8505 - val_loss: 0.1239 - val_categorical_accuracy: 0.8363
+Epoch 18/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1148 - categorical_accuracy: 0.8521 - val_loss: 0.1225 - val_categorical_accuracy: 0.8382
+Epoch 19/50
+134/134 [==============================] - 6s 47ms/step - loss: 0.1123 - categorical_accuracy: 0.8549 - val_loss: 0.1201 - val_categorical_accuracy: 0.8419
+Epoch 20/50
+134/134 [==============================] - 6s 47ms/step - loss: 0.1110 - categorical_accuracy: 0.8593 - val_loss: 0.1192 - val_categorical_accuracy: 0.8419
+Epoch 21/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.1064 - categorical_accuracy: 0.8624 - val_loss: 0.1176 - val_categorical_accuracy: 0.8466
+Epoch 22/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1055 - categorical_accuracy: 0.8633 - val_loss: 0.1168 - val_categorical_accuracy: 0.8447
+Epoch 23/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.1020 - categorical_accuracy: 0.8668 - val_loss: 0.1152 - val_categorical_accuracy: 0.8466
+Epoch 24/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.0986 - categorical_accuracy: 0.8720 - val_loss: 0.1152 - val_categorical_accuracy: 0.8438
+Epoch 25/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0988 - categorical_accuracy: 0.8694 - val_loss: 0.1120 - val_categorical_accuracy: 0.8531
+Epoch 26/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.0964 - categorical_accuracy: 0.8718 - val_loss: 0.1108 - val_categorical_accuracy: 0.8541
+Epoch 27/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0947 - categorical_accuracy: 0.8816 - val_loss: 0.1088 - val_categorical_accuracy: 0.8597
+Epoch 28/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0910 - categorical_accuracy: 0.8809 - val_loss: 0.1081 - val_categorical_accuracy: 0.8578
+Epoch 29/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.0905 - categorical_accuracy: 0.8851 - val_loss: 0.1076 - val_categorical_accuracy: 0.8569
+Epoch 30/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0899 - categorical_accuracy: 0.8828 - val_loss: 0.1060 - val_categorical_accuracy: 0.8625
+Epoch 31/50
+134/134 [==============================] - 6s 47ms/step - loss: 0.0861 - categorical_accuracy: 0.8867 - val_loss: 0.1045 - val_categorical_accuracy: 0.8625
+Epoch 32/50
+134/134 [==============================] - 6s 47ms/step - loss: 0.0845 - categorical_accuracy: 0.8945 - val_loss: 0.1047 - val_categorical_accuracy: 0.8644
+Epoch 33/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0813 - categorical_accuracy: 0.8949 - val_loss: 0.1053 - val_categorical_accuracy: 0.8578
+Epoch 34/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0820 - categorical_accuracy: 0.8975 - val_loss: 0.1019 - val_categorical_accuracy: 0.8644
+Epoch 35/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0799 - categorical_accuracy: 0.8994 - val_loss: 0.1013 - val_categorical_accuracy: 0.8700
+Epoch 36/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.0788 - categorical_accuracy: 0.8980 - val_loss: 0.1012 - val_categorical_accuracy: 0.8662
+Epoch 37/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0770 - categorical_accuracy: 0.8996 - val_loss: 0.0999 - val_categorical_accuracy: 0.8690
+Epoch 38/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.0742 - categorical_accuracy: 0.9083 - val_loss: 0.0994 - val_categorical_accuracy: 0.8718
+Epoch 39/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0733 - categorical_accuracy: 0.9064 - val_loss: 0.0985 - val_categorical_accuracy: 0.8718
+Epoch 40/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.0725 - categorical_accuracy: 0.9064 - val_loss: 0.0987 - val_categorical_accuracy: 0.8718
+Epoch 41/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.0727 - categorical_accuracy: 0.9069 - val_loss: 0.0989 - val_categorical_accuracy: 0.8756
+Epoch 42/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0724 - categorical_accuracy: 0.9062 - val_loss: 0.0969 - val_categorical_accuracy: 0.8775
+Epoch 43/50
+134/134 [==============================] - 6s 47ms/step - loss: 0.0685 - categorical_accuracy: 0.9111 - val_loss: 0.0967 - val_categorical_accuracy: 0.8793
+Epoch 44/50
+134/134 [==============================] - 6s 47ms/step - loss: 0.0692 - categorical_accuracy: 0.9134 - val_loss: 0.0947 - val_categorical_accuracy: 0.8840
+Epoch 45/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0701 - categorical_accuracy: 0.9099 - val_loss: 0.0953 - val_categorical_accuracy: 0.8784
+Epoch 46/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0647 - categorical_accuracy: 0.9176 - val_loss: 0.0948 - val_categorical_accuracy: 0.8784
+Epoch 47/50
+134/134 [==============================] - 6s 45ms/step - loss: 0.0666 - categorical_accuracy: 0.9127 - val_loss: 0.0945 - val_categorical_accuracy: 0.8793
+Epoch 48/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0634 - categorical_accuracy: 0.9186 - val_loss: 0.0939 - val_categorical_accuracy: 0.8803
+Epoch 49/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0642 - categorical_accuracy: 0.9188 - val_loss: 0.0944 - val_categorical_accuracy: 0.8831
+Epoch 50/50
+134/134 [==============================] - 6s 46ms/step - loss: 0.0634 - categorical_accuracy: 0.9216 - val_loss: 0.0956 - val_categorical_accuracy: 0.8793
+Best epoch: 44
+Epoch 1/44
+134/134 [==============================] - 10s 49ms/step - loss: 0.1529 - categorical_accuracy: 0.8320 - val_loss: 0.1554 - val_categorical_accuracy: 0.8213
+Epoch 2/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1469 - categorical_accuracy: 0.8345 - val_loss: 0.1497 - val_categorical_accuracy: 0.8213
+Epoch 3/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1409 - categorical_accuracy: 0.8355 - val_loss: 0.1442 - val_categorical_accuracy: 0.8279
+Epoch 4/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.1380 - categorical_accuracy: 0.8359 - val_loss: 0.1413 - val_categorical_accuracy: 0.8288
+Epoch 5/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.1348 - categorical_accuracy: 0.8390 - val_loss: 0.1395 - val_categorical_accuracy: 0.8307
+Epoch 6/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1330 - categorical_accuracy: 0.8366 - val_loss: 0.1374 - val_categorical_accuracy: 0.8344
+Epoch 7/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1310 - categorical_accuracy: 0.8383 - val_loss: 0.1350 - val_categorical_accuracy: 0.8335
+Epoch 8/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1287 - categorical_accuracy: 0.8402 - val_loss: 0.1325 - val_categorical_accuracy: 0.8372
+Epoch 9/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1248 - categorical_accuracy: 0.8430 - val_loss: 0.1330 - val_categorical_accuracy: 0.8354
+Epoch 10/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1264 - categorical_accuracy: 0.8413 - val_loss: 0.1300 - val_categorical_accuracy: 0.8382
+Epoch 11/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1221 - categorical_accuracy: 0.8462 - val_loss: 0.1308 - val_categorical_accuracy: 0.8410
+Epoch 12/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1198 - categorical_accuracy: 0.8495 - val_loss: 0.1270 - val_categorical_accuracy: 0.8410
+Epoch 13/44
+134/134 [==============================] - 6s 45ms/step - loss: 0.1191 - categorical_accuracy: 0.8472 - val_loss: 0.1237 - val_categorical_accuracy: 0.8400
+Epoch 14/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1157 - categorical_accuracy: 0.8512 - val_loss: 0.1230 - val_categorical_accuracy: 0.8438
+Epoch 15/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1127 - categorical_accuracy: 0.8563 - val_loss: 0.1232 - val_categorical_accuracy: 0.8410
+Epoch 16/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.1119 - categorical_accuracy: 0.8563 - val_loss: 0.1200 - val_categorical_accuracy: 0.8457
+Epoch 17/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.1095 - categorical_accuracy: 0.8577 - val_loss: 0.1179 - val_categorical_accuracy: 0.8485
+Epoch 18/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.1082 - categorical_accuracy: 0.8582 - val_loss: 0.1152 - val_categorical_accuracy: 0.8559
+Epoch 19/44
+134/134 [==============================] - 6s 45ms/step - loss: 0.1082 - categorical_accuracy: 0.8582 - val_loss: 0.1151 - val_categorical_accuracy: 0.8587
+Epoch 20/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1009 - categorical_accuracy: 0.8732 - val_loss: 0.1116 - val_categorical_accuracy: 0.8569
+Epoch 21/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.1004 - categorical_accuracy: 0.8696 - val_loss: 0.1109 - val_categorical_accuracy: 0.8606
+Epoch 22/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0990 - categorical_accuracy: 0.8708 - val_loss: 0.1087 - val_categorical_accuracy: 0.8616
+Epoch 23/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0987 - categorical_accuracy: 0.8753 - val_loss: 0.1093 - val_categorical_accuracy: 0.8597
+Epoch 24/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0949 - categorical_accuracy: 0.8788 - val_loss: 0.1097 - val_categorical_accuracy: 0.8597
+Epoch 25/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0933 - categorical_accuracy: 0.8771 - val_loss: 0.1084 - val_categorical_accuracy: 0.8644
+Epoch 26/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0922 - categorical_accuracy: 0.8828 - val_loss: 0.1064 - val_categorical_accuracy: 0.8634
+Epoch 27/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0897 - categorical_accuracy: 0.8865 - val_loss: 0.1063 - val_categorical_accuracy: 0.8634
+Epoch 28/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.0856 - categorical_accuracy: 0.8909 - val_loss: 0.1035 - val_categorical_accuracy: 0.8690
+Epoch 29/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.0893 - categorical_accuracy: 0.8853 - val_loss: 0.1064 - val_categorical_accuracy: 0.8644
+Epoch 30/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.0844 - categorical_accuracy: 0.8938 - val_loss: 0.1070 - val_categorical_accuracy: 0.8634
+Epoch 31/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0846 - categorical_accuracy: 0.8881 - val_loss: 0.1036 - val_categorical_accuracy: 0.8681
+Epoch 32/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0835 - categorical_accuracy: 0.8909 - val_loss: 0.1039 - val_categorical_accuracy: 0.8681
+Epoch 33/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.0805 - categorical_accuracy: 0.8959 - val_loss: 0.1049 - val_categorical_accuracy: 0.8700
+Epoch 34/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0790 - categorical_accuracy: 0.8982 - val_loss: 0.1020 - val_categorical_accuracy: 0.8709
+Epoch 35/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0736 - categorical_accuracy: 0.9045 - val_loss: 0.1026 - val_categorical_accuracy: 0.8737
+Epoch 36/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0756 - categorical_accuracy: 0.9017 - val_loss: 0.1023 - val_categorical_accuracy: 0.8681
+Epoch 37/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0743 - categorical_accuracy: 0.9031 - val_loss: 0.1010 - val_categorical_accuracy: 0.8728
+Epoch 38/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0728 - categorical_accuracy: 0.9069 - val_loss: 0.1032 - val_categorical_accuracy: 0.8681
+Epoch 39/44
+134/134 [==============================] - 6s 45ms/step - loss: 0.0716 - categorical_accuracy: 0.9104 - val_loss: 0.1005 - val_categorical_accuracy: 0.8737
+Epoch 40/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.0697 - categorical_accuracy: 0.9099 - val_loss: 0.1002 - val_categorical_accuracy: 0.8775
+Epoch 41/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.0709 - categorical_accuracy: 0.9113 - val_loss: 0.1025 - val_categorical_accuracy: 0.8700
+Epoch 42/44
+134/134 [==============================] - 6s 47ms/step - loss: 0.0679 - categorical_accuracy: 0.9115 - val_loss: 0.1024 - val_categorical_accuracy: 0.8709
+Epoch 43/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0704 - categorical_accuracy: 0.9090 - val_loss: 0.0996 - val_categorical_accuracy: 0.8775
+Epoch 44/44
+134/134 [==============================] - 6s 46ms/step - loss: 0.0696 - categorical_accuracy: 0.9125 - val_loss: 0.1032 - val_categorical_accuracy: 0.8718
+42/42 [==============================] - 0s 8ms/step - loss: 0.1007 - categorical_accuracy: 0.8713
+[test loss, test accuracy]: [0.10070020705461502, 0.871257483959198]
+Results summary
+Results in test_directory\intro_to_kt
+Showing 10 best trials
+Objective(name='val_categorical_accuracy', direction='max')
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 64
+gru1drop: 0.30000000000000004
+dropout1: 0.2
+gru2units: 48
+gru2drop: 0.1
+optimizer: adam
+learning_rate: 0.0001
+Score: 0.895229160785675
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 192
+gru1drop: 0.30000000000000004
+dropout1: 0.30000000000000004
+gru2units: 16
+gru2drop: 0.1
+optimizer: adam
+learning_rate: 0.0001
+Score: 0.8933582901954651
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 192
+gru1drop: 0.30000000000000004
+dropout1: 0.30000000000000004
+gru2units: 64
+gru2drop: 0.1
+optimizer: adam
+learning_rate: 0.0001
+Score: 0.8924227952957153
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 64
+gru1drop: 0.1
+dropout1: 0.2
+gru2units: 16
+gru2drop: 0.20000000000000004
+optimizer: adam
+learning_rate: 0.0001
+Score: 0.8914873600006104
+Trial summary
+Hyperparameters:
+activation: tanh
+gru1units: 128
+gru1drop: 0.30000000000000004
+dropout1: 0.2
+gru2units: 48
+gru2drop: 0.1
+optimizer: adam
+learning_rate: 0.01
+Score: 0.8905519247055054
+Trial summary
+Hyperparameters:
+activation: elu
+gru1units: 192
+gru1drop: 0.30000000000000004
+dropout1: 0.30000000000000004
+gru2units: 48
+gru2drop: 0.1
+optimizer: adam
+learning_rate: 0.0001
+Score: 0.8905519247055054
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 192
+gru1drop: 0.1
+dropout1: 0.2
+gru2units: 16
+gru2drop: 0.20000000000000004
+optimizer: adam
+learning_rate: 0.0001
+Score: 0.8896164894104004
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 192
+gru1drop: 0.1
+dropout1: 0.30000000000000004
+gru2units: 48
+gru2drop: 0.20000000000000004
+optimizer: adam
+learning_rate: 0.0001
+Score: 0.8896164894104004
+Trial summary
+Hyperparameters:
+activation: selu
+gru1units: 192
+gru1drop: 0.2
+dropout1: 0.30000000000000004
+gru2units: 16
+gru2drop: 0.20000000000000004
+optimizer: adam
+learning_rate: 0.0001
+Score: 0.8896164894104004
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 64
+gru1drop: 0.1
+dropout1: 0.2
+gru2units: 64
+gru2drop: 0.1
+optimizer: adam
+learning_rate: 0.0001
+Score: 0.8896164894104004
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 64)            70272
+
+ dropout (Dropout)           (None, 50, 64)            0
+
+ gru_1 (GRU)                 (None, 48)                16416
+
+ dense (Dense)               (None, 2)                 98
+
+=================================================================
+Total params: 1,586,786
+Trainable params: 1,586,786
+Non-trainable params: 0
+_________________________________________________________________
+42/42 [==============================] - 1s 8ms/step - loss: 0.0892 - categorical_accuracy: 0.8885
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 192)           284544
+
+ dropout (Dropout)           (None, 50, 192)           0
+
+ gru_1 (GRU)                 (None, 16)                10080
+
+ dense (Dense)               (None, 2)                 34
+
+=================================================================
+Total params: 1,794,658
+Trainable params: 1,794,658
+Non-trainable params: 0
+_________________________________________________________________
+42/42 [==============================] - 1s 15ms/step - loss: 0.0926 - categorical_accuracy: 0.8877
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 192)           284544
+
+ dropout (Dropout)           (None, 50, 192)           0
+
+ gru_1 (GRU)                 (None, 64)                49536
+
+ dense (Dense)               (None, 2)                 130
+
+=================================================================
+Total params: 1,834,210
+Trainable params: 1,834,210
+Non-trainable params: 0
+_________________________________________________________________
+42/42 [==============================] - 1s 16ms/step - loss: 0.0887 - categorical_accuracy: 0.8967
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 64)            70272
+
+ dropout (Dropout)           (None, 50, 64)            0
+
+ gru_1 (GRU)                 (None, 16)                3936
+
+ dense (Dense)               (None, 2)                 34
+
+=================================================================
+Total params: 1,574,242
+Trainable params: 1,574,242
+Non-trainable params: 0
+_________________________________________________________________
+42/42 [==============================] - 1s 8ms/step - loss: 0.0990 - categorical_accuracy: 0.8817
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 128)           165120
+
+ dropout (Dropout)           (None, 50, 128)           0
+
+ gru_1 (GRU)                 (None, 48)                25632
+
+ dense (Dense)               (None, 2)                 98
+
+=================================================================
+Total params: 1,690,850
+Trainable params: 1,690,850
+Non-trainable params: 0
+_________________________________________________________________
+42/42 [==============================] - 6s 13ms/step - loss: 0.0970 - categorical_accuracy: 0.8795
+
+Process finished with exit code 0
+
+
+import os
+import pickle
+
+import gensim
+import keras_tuner as kt
+import numpy as np
+import pandas as pd
+from keras.utils import np_utils
+from sklearn.model_selection import train_test_split
+from tensorflow.keras import Sequential
+from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.layers import GRU, Dense, Dropout, Embedding
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.optimizers import Nadam
+from tensorflow.keras.optimizers import RMSprop
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+'''
+hp_learning_rate = hp.Choice('learning_rate', values=[1e-2, 1e-3, 1e-4])
+if optimizer == 'adam':
+    optimizer = Adam(learning_rate=hp_learning_rate)
+elif optimizer == 'rmsprop':
+    optimizer = RMSprop(learning_rate=hp_learning_rate)
+elif optimizer == 'nadam':
+    optimizer = Nadam(learning_rate=hp_learning_rate)
+else:
+    raise
+'''
+
+
+def model_builder(hp):
+    activation_choice = hp.Choice('activation', values=['relu', 'tanh', 'elu', 'selu'])
+
+    model = Sequential()
+    model.add(Embedding(input_dim=dict_len,
+                        output_dim=300,
+                        input_length=string_len,
+                        mask_zero=True,
+                        weights=[embedding_matrix],
+                        trainable=True))
+    model.add(GRU(units=hp.Int('gru1units',
+                               max_value=254,
+                               min_value=64,
+                               step=64),
+                  activation=activation_choice,
+                  dropout=hp.Float('gru1drop',
+                                   max_value=0.3,
+                                   min_value=0.1,
+                                   step=0.1),
+                  return_sequences=True
+                  ))
+    model.add(Dropout(rate=hp.Float('dropout1',
+                                    max_value=0.3,
+                                    min_value=0.1,
+                                    step=0.1)))
+    model.add(GRU(units=hp.Int('gru2units',
+                               max_value=64,
+                               min_value=16,
+                               step=16),
+                  activation=activation_choice,
+                  dropout=hp.Float('gru2drop',
+                                   max_value=0.2,
+                                   min_value=0.1,
+                                   step=0.05)
+                  ))
+    model.add(Dense(2, activation='softmax'))
+
+    optimizer = hp.Choice('optimizer', values=['adam', 'rmsprop', 'nadam'])
+    hp_learning_rate = hp.Choice('learning_rate', values=[1e-2, 1e-3, 1e-4])
+    if optimizer == 'adam':
+        optimizer = Adam(learning_rate=hp_learning_rate)
+    elif optimizer == 'rmsprop':
+        optimizer = RMSprop(learning_rate=hp_learning_rate)
+    elif optimizer == 'nadam':
+        optimizer = Nadam(learning_rate=hp_learning_rate)
+    else:
+        raise
+    model.compile(optimizer=optimizer,
+                  loss='mse',
+                  metrics='categorical_accuracy')
+    return model
+
+
+dict_len = 5000
+string_len = 50
+batch_size = 32
+epochs = 100
+max_trials = 30
+test_size = 0.2
+validation_split = 0.2
+best_model_monitor = 'val_categorical_accuracy'
+best_model_mode = 'max'
+count_best_model = 5
+stop_early = EarlyStopping(monitor='val_categorical_accuracy',
+                           patience=20,  # кол-во эпох без улучшений и стоп
+                           min_delta=0.01,  # мин знач ниже которого не будет считаться улучшением
+                           verbose=1,  # показывать-1 статистику или нет-0
+                           mode='auto',  # auto min max понижать или повышать результаты нужно
+                           baseline=None,  # прекратит обучение если не достигнет базового уровня
+                           restore_best_weights=False)
+
+data = pd.read_csv('../../data/avoska_udpipe.csv', header=None, names=['category', 'text'])
+
+# Создаем словарь токенайзера со всех текстов размером dict_len слов
+tokenizer = Tokenizer(num_words=dict_len, oov_token='ноль_NOUN', filters='', lower=False)
+tokenizer.fit_on_texts(data['text'])
+with open('../../data/tokenizer.pickle', 'wb') as handle:
+    pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+# Обрабатываем данные, оставляем только слова из первых 10.000 слов словаря токенайзера
+data['text'] = tokenizer.texts_to_sequences(data['text'])
+data['text'] = tokenizer.sequences_to_texts(data['text'])
+data = data.drop_duplicates('text', keep='last')
+data = data[data['text'].str.strip().astype(bool)]
+x_data = data['text'].tolist()
+y_data = data['category'].tolist()
+
+x_data = tokenizer.texts_to_sequences(x_data)
+x_data = pad_sequences(x_data, maxlen=string_len)
+y_data = np_utils.to_categorical(y_data, 2)
+x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=test_size)
+
+# Создаем словарь-матрицу вложений векторов размером словаря токенайзера
+word2vec_path = '../../data/rusvectores_model.bin'
+word2vec = gensim.models.KeyedVectors.load_word2vec_format(word2vec_path, binary=True)
+
+embedding_matrix = np.zeros((dict_len, 300))
+for word, i in tokenizer.word_index.items():
+    if i > dict_len:
+        break
+    embedding_matrix[i - 1] = word2vec[word]
+print(embedding_matrix.shape)
+
+tuner = kt.BayesianOptimization(model_builder,
+                                objective='val_categorical_accuracy',
+                                directory='test_directory',
+                                max_trials=max_trials,
+                                executions_per_trial=1,
+                                project_name='intro_to_kt')
+
+tuner.search(x_train, y_train,
+             epochs=epochs,
+             batch_size=batch_size,
+             validation_split=validation_split,
+             callbacks=[stop_early])
+
+# Get the optimal hyperparameters
+best_hps = tuner.get_best_hyperparameters()[0]
+
+'''print(f"""
+The hyperparameter search is complete. The optimal number of units in the first densely-connected
+layer is {best_hps.get('units')} and the optimal learning rate for the optimizer
+is {best_hps.get('learning_rate')}.
+""")'''
+
+# Build the model with the optimal hyperparameters and train it on the data for 50 epochs
+modela = tuner.hypermodel.build(best_hps)
+history = modela.fit(x_train, y_train, epochs=50, validation_split=0.2)
+
+val_acc_per_epoch = history.history['val_categorical_accuracy']
+best_epoch = val_acc_per_epoch.index(max(val_acc_per_epoch)) + 1
+print('Best epoch: %d' % (best_epoch,))
+
+hypermodel = tuner.hypermodel.build(best_hps)
+
+# Retrain the model
+hypermodel.fit(x_train, y_train, epochs=best_epoch, validation_split=0.2)
+
+eval_result = hypermodel.evaluate(x_test, y_test)
+print("[test loss, test accuracy]:", eval_result)
+
+hypermodel.save('hypermodel.h5')
+
+tuner.results_summary()
+
+best_models = tuner.get_best_models(count_best_model)
+for idx, best_model in enumerate(best_models):
+    best_model.summary()
+    best_model.evaluate(x_test, y_test)
+    best_model.save('best_model' + str(idx) + '.h5')

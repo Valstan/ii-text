@@ -1,0 +1,30 @@
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 80, 64)            960000
+
+ dropout (Dropout)           (None, 80, 64)            0
+
+ gru (GRU)                   (None, 16)                3936
+
+ dropout_1 (Dropout)         (None, 16)                0
+
+ dense (Dense)               (None, 1)                 17
+
+=================================================================
+Total params: 963,953
+Trainable params: 963,953
+Non-trainable params: 0
+_________________________________________________________________
+301/301 [==============================] - 2s 4ms/step - loss: 0.4326 - binary_accuracy: 0.8641
+
+Trial summary
+Hyperparameters:
+activation: elu
+dropout1: 0.4
+gru1units: 16
+gru1drop: 0.4
+optimizer: adam
+learning_rate: 0.001
+Score: 0.8382923603057861

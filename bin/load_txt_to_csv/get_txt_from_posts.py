@@ -9,11 +9,11 @@ def get_txt_from_posts(posts):
         if 'text' in i and i['text']:
             texts.append(i['text'])
         if 'attachments' in i and i['attachments'][0]['type'] == 'photo':
-            height = 0
+            height = 250
             url = ''
             for x in i['attachments'][0]['photo']['sizes']:
-                if x['height'] > height:
-                    height = x['height']
+                if height > x['height'] > height - 100:
+                    # height = x['height']
                     url = x['url']
             if image_get(url, 'image'):
                 a = free_ocr('image')

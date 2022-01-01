@@ -1,0 +1,23 @@
+WARNING:tensorflow:Error in loading the saved optimizer state. As a result, your model is starting with a freshly initialized optimizer.
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 128)           165120
+
+ dropout (Dropout)           (None, 50, 128)           0
+
+ gru_1 (GRU)                 (None, 48)                25632
+
+ dense (Dense)               (None, 1)                 49
+
+=================================================================
+Total params: 1,690,801
+Trainable params: 1,690,801
+Non-trainable params: 0
+_________________________________________________________________
+23/23 [==============================] - 1s 13ms/step - loss: 0.6225 - accuracy: 0.8479
+
+Process finished with exit code 0

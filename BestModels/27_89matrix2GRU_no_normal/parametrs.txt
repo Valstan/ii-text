@@ -1,0 +1,224 @@
+Showing 10 best trials
+Objective(name='val_loss', direction='min')
+Trial summary
+Hyperparameters:
+activation: elu
+gru1units: 128
+gru1drop: 0.30000000000000004
+dropout1: 0.2
+gru2units: 16
+gru2drop: 0.15000000000000002
+optimizer: rmsprop
+learning_rate: 0.001
+Score: 0.28121644258499146
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 128
+gru1drop: 0.2
+dropout1: 0.1
+gru2units: 32
+gru2drop: 0.1
+optimizer: nadam
+learning_rate: 0.001
+Score: 0.28193867206573486
+Trial summary
+Hyperparameters:
+activation: selu
+gru1units: 192
+gru1drop: 0.2
+dropout1: 0.2
+gru2units: 32
+gru2drop: 0.15000000000000002
+optimizer: nadam
+learning_rate: 0.001
+Score: 0.28463345766067505
+Trial summary
+Hyperparameters:
+activation: selu
+gru1units: 128
+gru1drop: 0.30000000000000004
+dropout1: 0.2
+gru2units: 48
+gru2drop: 0.20000000000000004
+optimizer: rmsprop
+learning_rate: 0.01
+Score: 0.2883959114551544
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 192
+gru1drop: 0.30000000000000004
+dropout1: 0.1
+gru2units: 16
+gru2drop: 0.1
+optimizer: nadam
+learning_rate: 0.001
+Score: 0.28864529728889465
+Trial summary
+Hyperparameters:
+activation: elu
+gru1units: 192
+gru1drop: 0.1
+dropout1: 0.30000000000000004
+gru2units: 16
+gru2drop: 0.20000000000000004
+optimizer: nadam
+learning_rate: 0.01
+Score: 0.2892097532749176
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 128
+gru1drop: 0.2
+dropout1: 0.30000000000000004
+gru2units: 48
+gru2drop: 0.1
+optimizer: rmsprop
+learning_rate: 0.01
+Score: 0.2901264429092407
+Trial summary
+Hyperparameters:
+activation: elu
+gru1units: 192
+gru1drop: 0.30000000000000004
+dropout1: 0.2
+gru2units: 16
+gru2drop: 0.15000000000000002
+optimizer: nadam
+learning_rate: 0.001
+Score: 0.29085156321525574
+Trial summary
+Hyperparameters:
+activation: relu
+gru1units: 128
+gru1drop: 0.2
+dropout1: 0.30000000000000004
+gru2units: 48
+gru2drop: 0.15000000000000002
+optimizer: nadam
+learning_rate: 0.01
+Score: 0.2919468581676483
+Trial summary
+Hyperparameters:
+activation: selu
+gru1units: 128
+gru1drop: 0.1
+dropout1: 0.1
+gru2units: 48
+gru2drop: 0.15000000000000002
+optimizer: rmsprop
+learning_rate: 0.01
+Score: 0.29402342438697815
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 128)           165120
+
+ dropout (Dropout)           (None, 50, 128)           0
+
+ gru_1 (GRU)                 (None, 16)                7008
+
+ dense (Dense)               (None, 1)                 17
+
+=================================================================
+Total params: 1,672,145
+Trainable params: 1,672,145
+Non-trainable params: 0
+_________________________________________________________________
+41/41 [==============================] - 1s 15ms/step - loss: 0.3119 - accuracy: 0.8897
+Потери при тестировании:  0.3119264841079712
+Точность при тестировании: 0.8896659016609192
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 128)           165120
+
+ dropout (Dropout)           (None, 50, 128)           0
+
+ gru_1 (GRU)                 (None, 32)                15552
+
+ dense (Dense)               (None, 1)                 33
+
+=================================================================
+Total params: 1,680,705
+Trainable params: 1,680,705
+Non-trainable params: 0
+_________________________________________________________________
+41/41 [==============================] - 1s 14ms/step - loss: 0.2916 - accuracy: 0.8827
+Потери при тестировании:  0.2916160523891449
+Точность при тестировании: 0.882672905921936
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 192)           284544
+
+ dropout (Dropout)           (None, 50, 192)           0
+
+ gru_1 (GRU)                 (None, 32)                21696
+
+ dense (Dense)               (None, 1)                 33
+
+=================================================================
+Total params: 1,806,273
+Trainable params: 1,806,273
+Non-trainable params: 0
+_________________________________________________________________
+41/41 [==============================] - 2s 23ms/step - loss: 0.2985 - accuracy: 0.8873
+Потери при тестировании:  0.2984703779220581
+Точность при тестировании: 0.8873348832130432
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 128)           165120
+
+ dropout (Dropout)           (None, 50, 128)           0
+
+ gru_1 (GRU)                 (None, 48)                25632
+
+ dense (Dense)               (None, 1)                 49
+
+=================================================================
+Total params: 1,690,801
+Trainable params: 1,690,801
+Non-trainable params: 0
+_________________________________________________________________
+41/41 [==============================] - 1s 16ms/step - loss: 0.2715 - accuracy: 0.8974
+Потери при тестировании:  0.2715398967266083
+Точность при тестировании: 0.8974359035491943
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ embedding (Embedding)       (None, 50, 300)           1500000
+
+ gru (GRU)                   (None, 50, 192)           284544
+
+ dropout (Dropout)           (None, 50, 192)           0
+
+ gru_1 (GRU)                 (None, 16)                10080
+
+ dense (Dense)               (None, 1)                 17
+
+=================================================================
+Total params: 1,794,641
+Trainable params: 1,794,641
+Non-trainable params: 0
+_________________________________________________________________
+41/41 [==============================] - 2s 20ms/step - loss: 0.2947 - accuracy: 0.8834
+Потери при тестировании:  0.29474902153015137
+Точность при тестировании: 0.883449912071228
+
+Process finished with exit code 0
