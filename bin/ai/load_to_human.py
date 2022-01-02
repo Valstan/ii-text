@@ -18,10 +18,10 @@ groups["Смешное видео"] = -132265
 groups["МУЗЫКА. МОТОР! Русские видеоклипы https://vk.com/russianmusicvideo"] = -37343149
 groups["МУЗЫКА НУЛЕВЫХ СССР (СУПЕРДИСКОТЕКА 90х - 2000х) https://vk.com/public50638629"] = -50638629
 groups["Музыка 70-х 80-х 90-х 2000-х.Саундтреки ! https://vk.com/public187135362"] = -187135362
+groups["Лучшие Клипы https://vk.com/smotretklipi"] = -143826701
 groups["Культура & Искусство Журнал для умных и творческих https://vk.com/public31786047"] = -31786047
 groups["Удивительный мир https://vk.com/ourmagicalworld"] = -42320333
 groups["Случайный Ренессанс Искусство повсюду https://vk.com/accidental_renaissance"] = -92583139
-groups["wizard https://vk.com/public95775916"] = -95775916
 
 count_posts = 100  # сколько постов скачать
 offset = 0  # смещение от начала ленты
