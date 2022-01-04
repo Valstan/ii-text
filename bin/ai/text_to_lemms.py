@@ -2,15 +2,11 @@
 # coding: utf-8
 
 import os
-import pickle
 import re
 import sys
 
-import gensim
-import numpy as np
 import pandas as pd
 import wget
-from tensorflow.keras.preprocessing.text import Tokenizer
 from ufal.udpipe import Model, Pipeline
 
 """
@@ -143,7 +139,7 @@ def unify_sym(text):  # принимает строку в юникоде
     return cleaned_text
 
 
-def process(pipeline, text="Строка", keep_pos=True, keep_punct=False):
+def process(pipeline, text="Строка", keep_pos=False, keep_punct=False):
     # Если частеречные тэги не нужны (например, их нет в модели), выставьте pos=False
     # в этом случае на выход будут поданы только леммы
     # По умолчанию знаки пунктуации вырезаются. Чтобы сохранить их, выставьте punct=True
@@ -218,58 +214,50 @@ def process(pipeline, text="Строка", keep_pos=True, keep_punct=False):
     return tagged_propn
 
 
-def human_to_udpipe(folder_patch):
-    word2vec_path = folder_patch + 'rusvectores_model.bin'
-    word2vec = gensim.models.KeyedVectors.load_word2vec_format(word2vec_path, binary=True)
-    # URL of the UDPipe model
-    udpipe_model_url = "https://rusvectores.org/static/models/udpipe_syntagrus.model"
-    udpipe_filename = folder_patch + udpipe_model_url.split("/")[-1]
+# Укажите путь до файлов
+filepatch_text = '../../data/avoska_human.csv'
+filepatch_lemms = '../../data/avoska_lemms.csv'
 
-    if not os.path.isfile(udpipe_filename):
-        print("UDPipe model not found. Downloading...", file=sys.stderr)
-        wget.download(udpipe_model_url, udpipe_filename)
+# URL of the UDPipe model
+udpipe_model_url = "https://rusvectores.org/static/models/udpipe_syntagrus.model"
+udpipe_filename = filepatch_text + udpipe_model_url.split("/")[-1]
 
-    print("\nLoading the UDPipe model...", file=sys.stderr)
-    model = Model.load(udpipe_filename)
-    process_pipeline = Pipeline(
-        model, "tokenize", Pipeline.DEFAULT, Pipeline.DEFAULT, "conllu"
-    )
+if not os.path.isfile(udpipe_filename):
+    print("UDPipe model not found. Downloading...", file=sys.stderr)
+    wget.download(udpipe_model_url, udpipe_filename)
 
-    data = pd.read_csv(folder_patch + 'avoska_human.csv', header=None, names=['category', 'text'])
-    old_count_human = len(data.index)
-    list_category = data['category'].to_list()
-    list_text_human = data['text'].to_list()
+print("\nLoading the UDPipe model...", file=sys.stderr)
+model = Model.load(udpipe_filename)
+process_pipeline = Pipeline(
+    model, "tokenize", Pipeline.DEFAULT, Pipeline.DEFAULT, "conllu"
+)
 
-    data = pd.read_csv(folder_patch + 'avoska_udpipe.csv', header=None, names=['category', 'text'])
-    old_count_udpipe = len(data.index)
-    data = data.iloc[0:0]
+data = pd.read_csv(filepatch_text, header=None, names=['category', 'text'])
+old_count_human = len(data.index)
+list_category = data['category'].to_list()
+list_text_human = data['text'].to_list()
 
-    for idx, val in enumerate(list_text_human):
-        if idx % 100 == 0:
-            print(idx)
-        string_text = str(val)
+data = pd.read_csv(filepatch_lemms, header=None, names=['category', 'text'])
+old_count_udpipe = len(data.index)
+data = data.iloc[0:0]
 
-        res = unify_sym(string_text.strip())
-        output = process(process_pipeline, text=res)
-        new_text = []
-        for word in output:
-            if word in word2vec:
-                new_text.append(word)
-        new_text = ' '.join(str(e) for e in new_text)
+for idx, val in enumerate(list_text_human):
+    if idx % 100 == 0:
+        print(idx)
+    string_text = str(val)
+    # Чистка текста от мусора
+    res = unify_sym(string_text.strip())
+    # Пост-теги к словам НЕ лепить, пунктуацию всю НЕ сохранять
+    output = process(process_pipeline, text=res, keep_pos=False, keep_punct=False)
+    output = ' '.join(word for word in output if len(word) > 2)
+    if output:
+        data.loc[len(data.index)] = [list_category[idx], output]
 
-        if new_text:
-            data.loc[len(data.index)] = [list_category[idx], new_text]
+data = data.drop_duplicates('text', keep='last')
 
-    data = data.drop_duplicates('text', keep='last')
+print('Данных сырых - ', old_count_human)
+print('Было данных LEMMS - ', old_count_udpipe)
+print('Стало данных LEMMS - ', len(data.index))
 
-    print('Новых данных сырых - ', old_count_human)
-    print('Было данных UDPIPE - ', old_count_udpipe)
-    print('Данных после очистки текста - ', len(data.index))
-
-    # Сохраняем все в файлы
-    data.to_csv(folder_patch + 'avoska_udpipe.csv', header=False, encoding='utf-8', index=False)
-
-
-if __name__ == '__main__':
-    folder_ptch = '../../data/'  # Путь до директории с данными
-    human_to_udpipe(folder_ptch)
+# Сохраняем все в файлы
+data.to_csv(filepatch_lemms, header=False, encoding='utf-8', index=False)
