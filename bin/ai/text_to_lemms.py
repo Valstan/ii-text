@@ -215,12 +215,13 @@ def process(pipeline, text="Строка", keep_pos=False, keep_punct=False):
 
 
 # Укажите путь до файлов
-filepatch_text = '../../data/avoska_human.csv'
-filepatch_lemms = '../../data/avoska_lemms.csv'
+data_path = '../../data/'
+texts = 'avoska_test_human.csv'
+lemms = 'avoska_test_lemms.csv'
 
 # URL of the UDPipe model
 udpipe_model_url = "https://rusvectores.org/static/models/udpipe_syntagrus.model"
-udpipe_filename = filepatch_text + udpipe_model_url.split("/")[-1]
+udpipe_filename = data_path + udpipe_model_url.split("/")[-1]
 
 if not os.path.isfile(udpipe_filename):
     print("UDPipe model not found. Downloading...", file=sys.stderr)
@@ -232,12 +233,12 @@ process_pipeline = Pipeline(
     model, "tokenize", Pipeline.DEFAULT, Pipeline.DEFAULT, "conllu"
 )
 
-data = pd.read_csv(filepatch_text, header=None, names=['category', 'text'])
+data = pd.read_csv(data_path + texts, header=None, names=['category', 'text'])
 old_count_human = len(data.index)
 list_category = data['category'].to_list()
 list_text_human = data['text'].to_list()
 
-data = pd.read_csv(filepatch_lemms, header=None, names=['category', 'text'])
+data = pd.read_csv(data_path + lemms, header=None, names=['category', 'text'])
 old_count_udpipe = len(data.index)
 data = data.iloc[0:0]
 
@@ -255,9 +256,9 @@ for idx, val in enumerate(list_text_human):
 
 data = data.drop_duplicates('text', keep='last')
 
-print('Данных сырых - ', old_count_human)
-print('Было данных LEMMS - ', old_count_udpipe)
-print('Стало данных LEMMS - ', len(data.index))
+print('\033[3;30;42m Данных сырых:\033[0;0m', old_count_human)
+print('\033[3;30;42m Было данных LEMMS:\033[0;0m', old_count_udpipe)
+print('\033[3;30;42m Стало данных LEMMS:\033[0;0m', len(data.index))
 
 # Сохраняем все в файлы
-data.to_csv(filepatch_lemms, header=False, encoding='utf-8', index=False)
+data.to_csv(data_path + lemms, header=False, encoding='utf-8', index=False)

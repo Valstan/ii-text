@@ -120,11 +120,11 @@ def model_builder(hp):
 #     return model
 
 
-dict_len = 20000
-string_len = 100
+dict_len = 5000
+string_len = 70
 batch_size = 64
 epochs = 300
-max_trials = 50
+max_trials = 300
 test_size = 0.2
 validation_split = 0.2
 best_model_monitor = 'val_accuracy'
@@ -138,7 +138,7 @@ stop_early = EarlyStopping(monitor='val_binary_accuracy',
                            baseline=None,  # прекратит обучение если не достигнет базового уровня
                            restore_best_weights=True)
 
-data = pd.read_csv('data/avoska_morfy.csv', header=None, names=['category', 'text'])
+data = pd.read_csv('data/avoska_lemms.csv', header=None, names=['category', 'text'])
 print('Начальный размер базы данных - ', len(data.index))
 
 
@@ -156,10 +156,10 @@ data = data.drop_duplicates('text', keep='last')
 data = data[data['text'].str.strip().astype(bool)]
 
 # Откладываем для теста ВСЕ данные сырые оттокенизированные
-x_data_all = data['text'].tolist()
-y_data_all = np.asarray(data['category'].tolist())
-x_data_all = tokenizer.texts_to_sequences(x_data_all)
-x_data_all = pad_sequences(x_data_all, maxlen=string_len)
+# x_data_all = data['text'].tolist()
+# y_data_all = np.asarray(data['category'].tolist())
+# x_data_all = tokenizer.texts_to_sequences(x_data_all)
+# x_data_all = pad_sequences(x_data_all, maxlen=string_len)
 
 # Выравнивание данных по ответам
 nul_data = data.loc[data['category'] == 0]
@@ -212,6 +212,13 @@ tuner.search(x_train, y_train,
 tuner.results_summary()
 
 best_models = tuner.get_best_models(count_best_model)
+
+test = pd.read_csv('data/avoska_test_lemms.csv', header=None, names=['category', 'text'])
+x_data_all = test['text'].tolist()
+y_data_all = np.asarray(test['category'].tolist())
+x_data_all = tokenizer.texts_to_sequences(x_data_all)
+x_data_all = pad_sequences(x_data_all, maxlen=string_len)
+
 for idx, best_model in enumerate(best_models):
     best_model.summary()
     best_model.evaluate(x_data_all, y_data_all)
