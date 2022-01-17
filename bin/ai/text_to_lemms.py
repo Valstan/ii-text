@@ -23,7 +23,8 @@ zcat large_corpus.txt.gz | python3 rus_preprocessing_udpipe.py | gzip > processe
 
 
 def num_replace(word):
-    newtoken = "x" * len(word)
+    # newtoken = "x" * len(word)
+    newtoken = "цифра"
     return newtoken
 
 
@@ -254,7 +255,8 @@ for idx, val in enumerate(list_text_human):
     if output:
         data.loc[len(data.index)] = [list_category[idx], output]
 
-data = data.drop_duplicates('text', keep='last')
+# data = data.drop_duplicates('text', keep='last')
+data = data[data['text'].str.strip().astype(bool)]
 
 print('\033[3;30;42m Данных сырых:\033[0;0m', old_count_human)
 print('\033[3;30;42m Было данных LEMMS:\033[0;0m', old_count_udpipe)

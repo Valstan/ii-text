@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Укажите путь до папки
-test_file = '../../data/avoska_test_human.csv'
-human_file = '../../data/avoska_human.csv'
+test_file = '../../data/avoska_test_lemms.csv'
+human_file = '../../data/avoska_lemms.csv'
 
 test = pd.read_csv(test_file, header=None, names=['category', 'text'])
 old_count_test = len(test.index)
@@ -20,7 +20,7 @@ for idx, val in enumerate(list_text_test):
         human.loc[len(human.index)] = [list_category[idx], string_text]
 
 test = test.iloc[0:0]
-human = human.drop_duplicates('text', keep='last')
+# human = human.drop_duplicates('text', keep='last')
 
 print('Было данных - ', old_count_human)
 print('Новых данных - ', old_count_test)
